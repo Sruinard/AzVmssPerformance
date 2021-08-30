@@ -42,3 +42,17 @@ sudo chmod 600 /etc/smbcredentials/vmsssaklm.cred
 # mount directory
 sudo bash -c 'echo "//vmsssaklm.file.core.windows.net/vmssfileshare /mnt/vmssfileshare cifs nofail,vers=3.0,credentials=/etc/smbcredentials/vmsssaklm.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
 sudo mount -t cifs //vmsssaklm.file.core.windows.net/vmssfileshare /mnt/vmssfileshare -o vers=3.0,credentials=/etc/smbcredentials/vmsssaklm.cred,dir_mode=0777,file_mode=0777,serverino
+
+
+ 
+#Download AzCopy
+wget https://aka.ms/downloadazcopy-v10-linux
+ 
+#Expand Archive
+tar -xvf downloadazcopy-v10-linux
+ 
+#(Optional) Remove existing AzCopy version
+sudo rm /usr/bin/azcopy
+ 
+#Move AzCopy to the destination you want to store it
+sudo cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
