@@ -1,0 +1,9 @@
+{
+	"configurations": {
+		"identifier": {
+			"vmSku": '',
+			"storageType": 'Fileshare|BlockBlob",
+			"StorageSku": "Standard|Premium"
+		}		
+	}
+}
