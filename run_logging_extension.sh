@@ -7,5 +7,4 @@ az vmss extension set \
     --name CustomScript \
     --vmss-name vmss-instance \
     --resource-group vmss-performance \
-    --settings '{"fileUris":["https://raw.githubusercontent.com/Sruinard/AzVmssPerformance/master/echo_env_var.py"],"commandToExecute":"python3 ./echo_env_var.py"}'
-
+    --settings "{\"fileUris\":[\"https://raw.githubusercontent.com/Sruinard/AzVmssPerformance/master/echo_env_var.py\", \"https://raw.githubusercontent.com/Sruinard/AzVmssPerformance/master/run_logging_extension.sh\"],\"commandToExecute\":\"./run_logging_extension.sh $1 $2\"}"

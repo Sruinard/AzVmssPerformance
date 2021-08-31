@@ -62,15 +62,8 @@ sudo cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
 sudo apt install jq <<< y
 
 # 
-export WORLD='helloworking'
 curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2021-02-01" | jq
 token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -H Metadata:true | jq -r .access_token)
 
 export WORKSPACE_KEY=$(curl 'https://vmsskeyvaultsr.vault.azure.net/secrets/workspacekey?api-version=2016-10-01' -H "Authorization: Bearer ${token}" | jq -r .value)
 export WORKSPACE_ID$(curl 'https://vmsskeyvaultsr.vault.azure.net/secrets/workspaceid?api-version=2016-10-01' -H "Authorization: Bearer ${token}" | jq -r .value)
-
-echo "export WORKSPACE_KEY=$WORKSPACE_KEY" >> ./env_vars.sh
-echo "export WORKSPACE_ID=$WORKSPACE_ID" >> ./env_vars.sh
-echo "export WORLD=$WORLD" >> ./env_vars.sh
-
-source ./env_vars.sh

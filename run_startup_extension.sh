@@ -7,4 +7,4 @@ az vmss extension set \
     --name CustomScript \
     --vmss-name vmss-instance \
     --resource-group vmss-performance \
-    --settings '{"fileUris":["https://raw.githubusercontent.com/Sruinard/AzVmssPerformance/master/startup.sh"],"commandToExecute":". ./startup.sh"}'
+    --settings '{"fileUris":["https://raw.githubusercontent.com/Sruinard/AzVmssPerformance/master/startup.sh"],"commandToExecute":"./startup.sh"}'
