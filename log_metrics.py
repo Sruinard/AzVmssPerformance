@@ -11,6 +11,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--config-number', type=int)
 parser.add_argument('--time-in-seconds', type=int)
+parser.add_argument('--number-of-instances', type=int)
 
 args = parser.parse_args()
 

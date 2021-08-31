@@ -68,3 +68,9 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 export WORKSPACE_KEY=$(curl 'https://vmsskeyvaultsr.vault.azure.net/secrets/workspacekey?api-version=2016-10-01' -H "Authorization: Bearer ${token}" | jq -r .value)
 export WORKSPACE_ID$(curl 'https://vmsskeyvaultsr.vault.azure.net/secrets/workspaceid?api-version=2016-10-01' -H "Authorization: Bearer ${token}" | jq -r .value)
+
+echo "export WORKSPACE_KEY=$WORKSPACE_KEY" >> ./env_vars.sh
+echo "export WORKSPACE_ID=$WORKSPACE_ID" >> ./env_vars.sh
+echo "export WORLD=$WORLD" >> ./env_vars.sh
+
+source ./env_vars.sh
