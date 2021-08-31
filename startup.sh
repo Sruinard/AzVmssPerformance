@@ -56,3 +56,7 @@ sudo rm /usr/bin/azcopy
  
 #Move AzCopy to the destination you want to store it
 sudo cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
+
+
+# install jq
+sudo apt install jq <<< y
