@@ -15,5 +15,7 @@ print(environment_var)
 environment_var_key = os.environ.get("WORKSPACE_KEY", 'key placeholder value')
 print(environment_var_key)
 print(args.time_in_seconds)
+print(args.config_id)
+print(args.number_of_instances)
 
 print('----------------------------------------------')
